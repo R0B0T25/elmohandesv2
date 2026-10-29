@@ -1,0 +1,156 @@
+/*
+ * about.css — Elmohandes Decor
+ * Styles specific to the About Page (about.html)
+ */
+
+.about-story {
+  background: var(--color-ivory);
+}
+
+/* ============================================
+   MISSION & VISION PANELS
+   ============================================ */
+
+.about-panels {
+  background: var(--color-ivory-dark);
+}
+
+.about-panel {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ============================================
+   VERTICAL TIMELINE (RTL)
+   ============================================ */
+
+.about-timeline {
+  background: var(--color-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline {
+  position: relative;
+  margin-block-start: var(--space-6);
+  padding-block: var(--space-4);
+}
+
+/* Timeline central vertical line */
+.timeline__bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 120px; /* offset from right side in RTL */
+  width: 1px;
+  background: rgba(245, 241, 234, 0.15);
+}
+
+.timeline__bar-fill {
+  width: 100%;
+  height: 0; /* JS changes this dynamically on scroll */
+  background: var(--color-clay);
+  transition: height 1.2s var(--ease-out-soft);
+}
+
+.timeline.is-revealed .timeline__bar-fill {
+  height: 100%;
+}
+
+.timeline__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  padding-inline-start: 160px; /* pushes card past the line */
+}
+
+/* Timeline year badge */
+.timeline__year {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 12px;
+  width: 100px;
+  text-align: end;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  color: var(--color-clay-tint);
+  line-height: 1;
+}
+
+/* Custom point dot on central line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 120.5px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-charcoal);
+  border: 2px solid var(--color-clay);
+  border-radius: var(--radius-full);
+  transform: translateX(50%); /* aligns perfectly to the 1px bar */
+  z-index: 2;
+  transition: background var(--duration-medium) var(--ease-default);
+}
+
+.timeline-item.is-revealed::before {
+  background: var(--color-clay);
+}
+
+.timeline__card {
+  background: rgba(245, 241, 234, 0.03);
+  border: 1px solid rgba(245, 241, 234, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  max-width: 680px;
+  transition: border-color var(--duration-medium) var(--ease-default);
+}
+
+.timeline-item:hover .timeline__card {
+  border-color: var(--color-clay);
+}
+
+.timeline__title {
+  font-size: var(--text-h3);
+  color: var(--color-ivory);
+  margin-block-end: var(--space-2);
+}
+
+/* ============================================
+   RESPONSIVE TIMELINE
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .timeline__bar {
+    inset-inline-start: 20px;
+  }
+
+  .timeline-item {
+    padding-inline-start: var(--space-5);
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .timeline-item::before {
+    inset-inline-start: 20.5px;
+  }
+
+  .timeline__year {
+    position: relative;
+    inset-inline-start: 0;
+    text-align: start;
+    width: auto;
+    margin-block-end: var(--space-1);
+    padding-inline-start: 24px; /* offset from dot */
+  }
+}

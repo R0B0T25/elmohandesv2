@@ -1,0 +1,181 @@
+/*
+ * typography.css — Elmohandes Decor
+ * Type scale + editorial hierarchy
+ */
+
+/* ============================================
+   DISPLAY HEADINGS (Hero only)
+   ============================================ */
+
+.display-xl {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-xl);
+  line-height: var(--lh-display-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.display-l {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-l);
+  line-height: var(--lh-display-l);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+h1,
+.h1 {
+  font-size: var(--text-h1);
+  line-height: var(--lh-h1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h2,
+.h2 {
+  font-size: var(--text-h2);
+  line-height: var(--lh-h2);
+  font-weight: 600;
+}
+
+h3,
+.h3 {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  font-weight: 500;
+}
+
+h4,
+.h4 {
+  font-size: var(--text-body-l);
+  line-height: var(--lh-body-l);
+  font-weight: 600;
+}
+
+/* ============================================
+   BODY TEXT
+   ============================================ */
+
+.body-l {
+  font-size: var(--text-body-l);
+  line-height: var(--lh-body-l);
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+.body {
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+/* ============================================
+   CAPTION & EYEBROW
+   ============================================ */
+
+.caption {
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.eyebrow {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-clay);
+  background-color: rgba(245, 241, 234, 0.95);
+  padding: 4px 12px;
+  border-radius: 100px;
+  display: inline-block !important;
+  border: 1px solid rgba(184, 92, 56, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  margin-block-end: var(--space-2);
+  width: max-content;
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+
+.section-header {
+  margin-block-end: var(--space-6);
+}
+
+.section-header h2 {
+  margin-block-end: var(--space-3);
+}
+
+.section-header .body-l {
+  max-width: 580px;
+}
+
+.section-header.text-center .body-l,
+.section-header.text-center p {
+  margin-inline: auto;
+}
+
+/* ============================================
+   BLOCKQUOTE (Blog, Testimonials)
+   ============================================ */
+
+blockquote {
+  border-inline-start: 3px solid var(--color-clay);
+  padding-inline-start: var(--space-4);
+  margin-block: var(--space-5);
+  font-size: var(--text-body-l);
+  line-height: var(--lh-body-l);
+  font-style: italic;
+  color: var(--color-ink-soft);
+}
+
+/* ============================================
+   MOBILE TYPE SCALE
+   ============================================ */
+
+@media (max-width: 639px) {
+  .display-xl {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+
+  .display-l {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  h1,
+  .h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  h3,
+  .h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .body-l {
+    font-size: 18px;
+  }
+
+  .body {
+    font-size: 16px;
+  }
+}

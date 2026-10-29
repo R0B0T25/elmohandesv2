@@ -1,0 +1,124 @@
+/*
+ * blog-single.css — Elmohandes Decor
+ * Styles specific to the Single Blog Article page (blog-single.html)
+ */
+
+.hero--blog-single {
+  height: 70vh;
+  min-height: 480px;
+}
+
+/* ============================================
+   ARTICLE LAYOUT (Sidebar + Main Column)
+   ============================================ */
+
+.article-section {
+  background: var(--color-white);
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.article-sidebar {
+  position: relative;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 100px;
+  padding-inline-end: var(--space-3);
+  border-inline-end: 1px solid var(--color-border);
+}
+
+.toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.toc-link {
+  font-size: var(--text-button);
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: color var(--duration-micro) var(--ease-default);
+  display: block;
+}
+
+.toc-link:hover,
+.toc-link.is-active {
+  color: var(--color-clay);
+}
+
+/* Main Article Content */
+.article-body {
+  max-width: 720px;
+}
+
+.article-body h2 {
+  font-size: var(--text-h2);
+  margin-block-start: var(--space-5);
+  margin-block-end: var(--space-3);
+  color: var(--color-ink);
+}
+
+.article-body p {
+  font-size: var(--text-body-l);
+  line-height: 1.8;
+  color: var(--color-ink-soft);
+  margin-block-end: var(--space-3);
+}
+
+/* ============================================
+   AUTHOR BIO CARD
+   ============================================ */
+
+.author-bio {
+  background: var(--color-ivory-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-block-start: var(--space-6);
+}
+
+.author-bio__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.author-bio__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-bio__name {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--color-ink);
+  font-style: normal;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .article-sidebar {
+    display: none; /* Hide TOC on smaller viewports */
+  }
+}

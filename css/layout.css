@@ -1,0 +1,258 @@
+/*
+ * layout.css — Elmohandes Decor
+ * Container + Grid + Spacing system
+ */
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-desktop);
+}
+
+.container--narrow {
+  max-width: 900px;
+}
+
+.container--wide {
+  max-width: 100%;
+  padding-inline: var(--space-6);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+  padding-block: var(--space-8);
+}
+
+.section--lg {
+  padding-block: var(--space-9);
+}
+
+.section--xl {
+  padding-block: var(--space-10);
+}
+
+.section--sm {
+  padding-block: var(--space-6);
+}
+
+/* ============================================
+   GRID SYSTEM
+   ============================================ */
+
+.grid {
+  display: grid;
+  gap: var(--gutter-desktop);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fit grids */
+.grid-auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-auto-md {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+/* ============================================
+   FLEX UTILITIES
+   ============================================ */
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-1 {
+  gap: var(--space-1);
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-5 {
+  gap: var(--space-5);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
+
+/* ============================================
+   EDITORIAL SPLIT (60/40)
+   ============================================ */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.split--60-40 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.split--40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+/* RTL: Image order */
+.split .split__image {
+  order: 1; /* يمين في RTL */
+}
+.split .split__text {
+  order: 2; /* يسار في RTL */
+}
+
+.split.split--image-left .split__image {
+  order: 2;
+}
+.split.split--image-left .split__text {
+  order: 1;
+}
+
+/* ============================================
+   SPACERS
+   ============================================ */
+
+.spacer-1 {
+  height: var(--space-1);
+}
+.spacer-2 {
+  height: var(--space-2);
+}
+.spacer-3 {
+  height: var(--space-3);
+}
+.spacer-4 {
+  height: var(--space-4);
+}
+.spacer-5 {
+  height: var(--space-5);
+}
+.spacer-6 {
+  height: var(--space-6);
+}
+.spacer-7 {
+  height: var(--space-7);
+}
+.spacer-8 {
+  height: var(--space-8);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .container {
+    padding-inline: var(--container-padding-tablet);
+  }
+
+  .section {
+    padding-block: var(--space-7);
+  }
+  .section--lg {
+    padding-block: var(--space-8);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split,
+  .split--60-40,
+  .split--40-60 {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .split .split__image,
+  .split .split__text,
+  .split.split--image-left .split__image,
+  .split.split--image-left .split__text {
+    order: unset;
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding-inline: var(--container-padding-mobile);
+  }
+
+  .section {
+    padding-block: var(--space-6);
+  }
+  .section--lg {
+    padding-block: var(--space-7);
+  }
+  .section--xl {
+    padding-block: var(--space-8);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .container--wide {
+    padding-inline: var(--container-padding-mobile);
+  }
+}
+
+/* ============================================
+   SMOOTH INERTIA SCROLL CONTAINER
+   ============================================ */
+
+@media (min-width: 1024px) {
+  [data-scroll-container] {
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    width: 100%;
+    overflow: hidden;
+    will-change: transform;
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الصفحة غير موجودة 404 — المهندس للتشطيبات</title>
+    <meta
+      name="description"
+      content="الصفحة التي تبحث عنها غير موجودة. عد للرئيسية لمشاهدة مشاريعنا الفاخرة."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Noto+Serif+Arabic:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/typography.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <style>
+      .error-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-ivory);
+        position: relative;
+        overflow: hidden;
+        padding: var(--space-4);
+      }
+      .error-page__bg-number {
+        position: absolute;
+        font-size: clamp(120px, 30vw, 360px);
+        font-weight: 800;
+        color: var(--color-clay-tint);
+        opacity: 0.25;
+        line-height: 1;
+        z-index: 0;
+        pointer-events: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .error-page__content {
+        position: relative;
+        z-index: 1;
+        max-width: 480px;
+      }
+      .error-page__links {
+        margin-block-start: var(--space-4);
+        display: flex;
+        justify-content: center;
+        gap: var(--space-3);
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">الانتقال للمحتوى الرئيسي</a>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" aria-hidden="true"></div>
+
+    <!-- Main -->
+    <main id="main-content">
+      <section class="error-page text-center">
+        <div class="error-page__bg-number" aria-hidden="true">404</div>
+
+        <div class="error-page__content flex flex-col items-center gap-3">
+          <span class="eyebrow reveal">خطأ</span>
+          <h1 class="reveal reveal--delay-1">ضيعنا الطريق!</h1>
+          <p class="body-l reveal reveal--delay-2">
+            الصفحة التي تبحث عنها انتقلت أو لم تعد موجودة. لكن هناك مساحات جميلة
+            كثيرة تنتظرك.
+          </p>
+
+          <div class="error-page__links reveal reveal--delay-3">
+            <a href="index.html" class="btn btn--primary">الرئيسية</a>
+            <a href="projects.html" class="btn btn--secondary">المشاريع</a>
+            <a href="contact.html" class="btn btn--ghost-dark">تواصل معنا</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main-v2.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>

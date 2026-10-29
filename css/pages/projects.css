@@ -1,0 +1,106 @@
+/*
+ * projects.css — Elmohandes Decor
+ * Styles specific to the Projects Page (projects.html)
+ */
+
+.projects-section {
+  background: var(--color-ivory);
+}
+
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  margin-block-end: var(--space-4);
+}
+
+/* ============================================
+   ASYMMETRIC GRID MASONRY
+   ============================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter-desktop);
+  transition: all var(--duration-medium) var(--ease-default);
+}
+
+/* Base layouts for child columns */
+.projects-grid .project-card {
+  grid-column: span 4; /* default is 1/3 */
+  min-height: 380px;
+}
+
+/* Custom pattern mapping */
+/* Card 1: Large (2/3 width) */
+.projects-grid .project-card:nth-child(6n + 1) {
+  grid-column: span 8;
+  min-height: 480px;
+}
+
+/* Card 2: Small (1/3 width) */
+.projects-grid .project-card:nth-child(6n + 2) {
+  grid-column: span 4;
+  min-height: 480px;
+}
+
+/* Card 3: Small (1/3 width) */
+.projects-grid .project-card:nth-child(6n + 3) {
+  grid-column: span 4;
+  min-height: 400px;
+}
+
+/* Card 4: Large (2/3 width) */
+.projects-grid .project-card:nth-child(6n + 4) {
+  grid-column: span 8;
+  min-height: 400px;
+}
+
+/* Card 5: Equal (1/2 width) */
+.projects-grid .project-card:nth-child(6n + 5) {
+  grid-column: span 6;
+  min-height: 440px;
+}
+
+/* Card 6: Equal (1/2 width) */
+.projects-grid .project-card:nth-child(6n + 6) {
+  grid-column: span 6;
+  min-height: 440px;
+}
+
+.projects-grid .project-card__image {
+  height: 100%;
+}
+
+/* ============================================
+   RESPONSIVE GRID
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .projects-grid .project-card,
+  .projects-grid .project-card:nth-child(6n + 1),
+  .projects-grid .project-card:nth-child(6n + 2),
+  .projects-grid .project-card:nth-child(6n + 3),
+  .projects-grid .project-card:nth-child(6n + 4),
+  .projects-grid .project-card:nth-child(6n + 5),
+  .projects-grid .project-card:nth-child(6n + 6) {
+    grid-column: span 6; /* Half width on tablet */
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 639px) {
+  .projects-grid {
+    gap: var(--gutter-mobile);
+  }
+
+  .projects-grid .project-card,
+  .projects-grid .project-card:nth-child(6n + 1),
+  .projects-grid .project-card:nth-child(6n + 2),
+  .projects-grid .project-card:nth-child(6n + 3),
+  .projects-grid .project-card:nth-child(6n + 4),
+  .projects-grid .project-card:nth-child(6n + 5),
+  .projects-grid .project-card:nth-child(6n + 6) {
+    grid-column: span 12; /* Full width on mobile */
+    min-height: 280px;
+  }
+}

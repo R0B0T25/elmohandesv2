@@ -1,0 +1,146 @@
+/*
+ * contact.css — Elmohandes Decor
+ * Styles specific to the Contact Page (contact.html)
+ */
+
+/* ============================================
+   CONTACT LAYOUT
+   ============================================ */
+
+.contact-section {
+  background: var(--color-ivory);
+}
+
+.contact-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-info {
+  padding-inline-start: var(--space-4);
+}
+
+.contact-info__items {
+  margin-block: var(--space-4);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-micro) var(--ease-default),
+    transform var(--duration-micro) var(--ease-default);
+}
+
+a.contact-info__item:hover {
+  border-color: var(--color-clay);
+  transform: translateY(-2px);
+}
+
+.contact-info__icon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-ivory);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+
+.contact-info__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info__label {
+  display: block;
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-block-end: 2px;
+}
+
+.contact-info__value {
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.contact-info__extra {
+  background: var(--color-ivory-dark);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+}
+
+.contact-info__response-tag {
+  display: block;
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-success);
+  text-align: center;
+}
+
+/* ============================================
+   MAP CONTAINER
+   ============================================ */
+
+.contact-map {
+  background: var(--color-ivory);
+}
+
+.contact-map__wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 400px;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.contact-map__placeholder {
+  width: 100%;
+  height: 100%;
+  /* We use the CTA final background image styled in grayscale or warm tones as a map background */
+  background:
+    linear-gradient(rgba(28, 26, 23, 0.85), rgba(28, 26, 23, 0.85)),
+    url("../../assets/images/cta-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.contact-map__details {
+  max-width: 480px;
+}
+
+/* ============================================
+   SUCCESS STATE VISIBILITY
+   ============================================ */
+
+.success-state {
+  padding-block: var(--space-5);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .contact-info {
+    padding-inline-start: 0;
+  }
+}
